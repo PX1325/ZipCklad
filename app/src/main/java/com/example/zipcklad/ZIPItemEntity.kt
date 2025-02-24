@@ -1,6 +1,7 @@
 package com.example.zipcklad
 
 import androidx.room.Entity
+import androidx.room.Ignore
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "zip_items")
@@ -11,5 +12,6 @@ data class ZIPItemEntity(
     val partNumber: String,
     var quantity: Int,
     val location: String,
+    //@Ignore
     val isDirty: Boolean = false
 )

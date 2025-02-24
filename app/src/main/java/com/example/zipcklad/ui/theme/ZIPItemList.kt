@@ -1,4 +1,4 @@
-package com.example.zipcklad.ui
+package com.example.zipcklad.ui.theme
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn

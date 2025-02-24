@@ -15,9 +15,9 @@ object RetrofitClient {
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
     }
-    private val client = OkHttpClient.Builder()
+    /*private val client = OkHttpClient.Builder()
         .addInterceptor(loggingInterceptor)
-        .build()
+        .build()*/
 
     private val okHttpClient = OkHttpClient.Builder()
         .addInterceptor(loggingInterceptor)
@@ -34,7 +34,7 @@ object RetrofitClient {
             .build()
             .create(ZipApiService::class.java)
     }
-    data class ZipItemResponse(
+   /* data class ZipItemResponse(
         @SerializedName("Название")
         val name: String?,
         @SerializedName("Заказной номер")
@@ -50,5 +50,5 @@ object RetrofitClient {
     quantity = quantity ?: 0,
     location = location ?: "Не указано"
 
-    )
+    )*/
 }

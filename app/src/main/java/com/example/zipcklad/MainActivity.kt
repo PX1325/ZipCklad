@@ -26,7 +26,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.zipcklad.ui.ZIPItemList
+import com.example.zipcklad.ui.theme.ZIPItemList
 import com.example.zipcklad.ui.theme.ZipCkladTheme
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -156,7 +156,7 @@ fun MainScreen(viewModel: ZIPViewModel = hiltViewModel()) {
     }
 }
 
-@Composable
+/*@Composable
 fun SyncFAB(status: SyncStatus, onSyncClick: () -> Unit) {
     val rotation by animateFloatAsState(
         targetValue = if (status is SyncStatus.LOADING) 360f else 0f,
@@ -177,7 +177,7 @@ fun SyncFAB(status: SyncStatus, onSyncClick: () -> Unit) {
             modifier = Modifier.rotate(rotation)
         )
     }
-}
+}*/
 // Остальной код оставляем без изменений
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {

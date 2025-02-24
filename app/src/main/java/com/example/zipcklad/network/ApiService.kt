@@ -14,4 +14,10 @@ interface ZipApiService {
     @POST("sync")
     @Headers("Content-Type: application/json")
     suspend fun syncItems(@Body items: List<ZipItemSyncRequest>): Response<SyncResponse>
+    /*data class SyncRequest(
+        val partNumber: String,
+        val quantity: Int,
+        val name: String? = null,
+        val location: String? = null
+    )*/
 }

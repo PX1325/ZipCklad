@@ -112,9 +112,6 @@ class ZIPViewModel @Inject constructor(
             Log.e("SYNC_ERROR", "Sync failed", e)
         }
     }
-    private fun List<ZIPItemEntity>.toSyncRequests() = map {
-        NetworkMappers.toSyncRequest(it)
-    }
 
     private fun ZipItemResponse.toEntity() = ZIPItemEntity(
         name = name ?: "Без названия",
