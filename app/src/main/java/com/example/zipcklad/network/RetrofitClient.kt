@@ -1,7 +1,6 @@
 package com.example.zipcklad.network
 
-import com.example.zipcklad.ZIPItemEntity
-import com.google.gson.annotations.SerializedName
+import com.example.zipcklad.data.remote.api.ZipApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -15,9 +14,7 @@ object RetrofitClient {
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
     }
-    /*private val client = OkHttpClient.Builder()
-        .addInterceptor(loggingInterceptor)
-        .build()*/
+
 
     private val okHttpClient = OkHttpClient.Builder()
         .addInterceptor(loggingInterceptor)
@@ -34,21 +31,4 @@ object RetrofitClient {
             .build()
             .create(ZipApiService::class.java)
     }
-   /* data class ZipItemResponse(
-        @SerializedName("Название")
-        val name: String?,
-        @SerializedName("Заказной номер")
-        val partNumber: String?,
-        @SerializedName("Количество")
-        val quantity: Int?,
-        @SerializedName("Местоположение")
-        val location: String?
-    )
-        fun ZipItemResponse.toEntity() = ZIPItemEntity(
-    name = name ?: "Без названия",
-    partNumber = partNumber ?: "Без номера",
-    quantity = quantity ?: 0,
-    location = location ?: "Не указано"
-
-    )*/
 }

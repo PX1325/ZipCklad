@@ -2,10 +2,10 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.hilt.android) // Добавьте Hilt
-    id("kotlin-kapt") // Добавьте для Room и Hilt
+    alias(libs.plugins.hilt.android)
+    id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
-    //id("com.google.dagger.hilt.android")
+
 
 }
 
@@ -17,7 +17,7 @@ android {
         create("release") {
             storeFile = file("my-release-key.jks")
             storePassword = "123456"
-            keyAlias = "my-key-alias"  // Исправлено! Нельзя использовать цифры как alias
+            keyAlias = "my-key-alias"
             keyPassword = "123456"
         }
     }
@@ -54,6 +54,8 @@ android {
     buildFeatures {
         compose = true
     }
+
+
 }
 
 dependencies {
@@ -73,16 +75,14 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
-    implementation("com.opencsv:opencsv:5.7.1")
-    implementation("org.apache.poi:poi-ooxml:5.2.3")
-    implementation("org.apache.poi:poi:5.2.3")
-    implementation(libs.androidx.activity.compose)
-    implementation("androidx.compose.material:material-icons-extended:1.5.4")
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
-    implementation("androidx.compose.material3:material3:1.3.1")
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.opencsv)
+    implementation(libs.poi.ooxml)
+    implementation(libs.poi)
+    implementation(libs.androidx.material.icons.extended)
+    implementation(libs.logging.interceptor)
+    implementation (libs.ui)
+    implementation (libs.androidx.foundation)
     // Room
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)

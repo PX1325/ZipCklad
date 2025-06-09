@@ -1,5 +1,7 @@
-package com.example.zipcklad.network
+package com.example.zipcklad.di
 
+import com.example.zipcklad.data.remote.api.ZipApiService
+import com.example.zipcklad.network.RetrofitClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

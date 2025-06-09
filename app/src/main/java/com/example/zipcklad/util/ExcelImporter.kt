@@ -1,10 +1,13 @@
-package com.example.zipcklad
+package com.example.zipcklad.util
 
 import android.content.Context
+import com.example.zipcklad.data.local.ZIPItemEntity
 import org.apache.poi.ss.usermodel.*
 import java.io.InputStream
+import javax.inject.Inject
 
-class ExcelImporter(private val context: Context) {
+class ExcelImporter @Inject constructor(private val context: Context) {
+
     fun importFromStream(inputStream: InputStream): List<ZIPItemEntity> {
         val items = mutableListOf<ZIPItemEntity>()
 

@@ -1,17 +1,13 @@
-package com.example.zipcklad
+package com.example.zipcklad.data.local
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Update
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.flow.Flow
-import javax.inject.Singleton
 
 @Dao
 interface ZIPItemDao {
@@ -55,4 +51,8 @@ interface ZIPItemDao {
 
     @Query("DELETE FROM zip_items")
     suspend fun deleteAll()
+
+    @Delete
+    suspend fun delete(item: ZIPItemEntity)
+
 }

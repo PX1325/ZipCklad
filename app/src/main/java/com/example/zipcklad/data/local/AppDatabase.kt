@@ -1,4 +1,4 @@
-package com.example.zipcklad
+package com.example.zipcklad.data.local
 
 import androidx.room.Database
 import androidx.room.Room

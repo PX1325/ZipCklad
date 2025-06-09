@@ -1,5 +1,8 @@
-package com.example.zipcklad.network
+package com.example.zipcklad.data.remote.api
 
+import com.example.zipcklad.data.remote.model.SyncResponse
+import com.example.zipcklad.data.remote.model.ZipItemResponse
+import com.example.zipcklad.data.remote.model.ZipItemSyncRequest
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -14,10 +17,4 @@ interface ZipApiService {
     @POST("sync")
     @Headers("Content-Type: application/json")
     suspend fun syncItems(@Body items: List<ZipItemSyncRequest>): Response<SyncResponse>
-    /*data class SyncRequest(
-        val partNumber: String,
-        val quantity: Int,
-        val name: String? = null,
-        val location: String? = null
-    )*/
 }

@@ -1,6 +1,8 @@
 package com.example.zipcklad.network
 
-import com.example.zipcklad.ZIPItemEntity
+import com.example.zipcklad.data.local.ZIPItemEntity
+import com.example.zipcklad.data.remote.model.ZipItemResponse
+import com.example.zipcklad.data.remote.model.ZipItemSyncRequest
 
 object NetworkMappers {
     fun toSyncRequest(entity: ZIPItemEntity) = ZipItemSyncRequest(

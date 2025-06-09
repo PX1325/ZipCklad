@@ -1,4 +1,4 @@
-package com.example.zipcklad
+package com.example.zipcklad.di
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
